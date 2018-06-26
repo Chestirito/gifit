@@ -58,22 +58,22 @@ $(function() {
 
             figure.prepend(gifImage);
             figure.prepend(caption);
-
+ 
             $("#gifs-view").prepend(figure);
           }
         });
     });
     $("#gifs-view").on("click", ".figure-image", function(){
         var runningURL = $(this).attr("data-run");
-        var stillURL = $(this).attr("data-still")
+        var stillURL = $(this).attr("data-still");
         var isRunning = $(this).attr("data-running");
         if(isRunning === "no"){
             $(this).attr("src", runningURL);
-            isRunning.replaceWith("yes");
+            $(this).attr("data-running", "yes");
         }
         else{
             $(this).attr("src", stillURL);
-            isRunning.replaceWith("no");
+            $(this).attr("data-running", "no");
         }
     })
 
