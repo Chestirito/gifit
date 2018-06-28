@@ -16,24 +16,31 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h4 id="gif-btns">
-                    <button class="btn gBtn">Doge</button>
-                </h4>
+            <div class="col gif-col rounded">
+                <div id="gif-btns">
+                    
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-9">
-                <div id="gifs-view">
+            <div class="col-9 px-0 cHeight">
+                <div id="gifs-view" class="content rounded">
 
                 </div>
             </div>
-            <div class="col-3">
-                <div class="input-group">
-                    <input type="text" class="form-control addBar" placeholder="Type Here...">
-                    <span class="input-group-btn">
-                        <button id="addBtn" class="btn btn-default" type="button">Add</button>
-                    </span>
+            <div class="col-3 px-0 pl-2 cHeight">
+                <div class="content rounded">
+                    <div class="input-group">
+                        <input type="text" class="form-control addBar" placeholder="Add Button Here...">
+                        <span class="input-group-btn">
+                            <button id="addBtn" class="btn btn-default btn-primary" type="button">Add</button>
+                        </span>
+                    </div>
+                    <div class="instructions pl-2">
+                        <p>Click on any buttons above to show gifs of them</p>
+                        <p>Add your own buttons through the input bar</p>
+                        <p>Click on the same button to add more Gifs</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,7 +1,37 @@
+body{
+    background-image: url("../images/background.png");
+    background-size: cover;
+}
 .gBtn{
-    margin-right: 0.5em;
+    margin: 0.5em 0.5em 0.5em 0;
 }
 .item{
     float:left;
     margin-right: 0.5em;
+}
+.container{
+    margin-top: 0.5em;
+}
+.instructions{
+    margin-top: 1em;
+    font-weight: bold;
+}
+.container .row .content{
+    background-color: rgb(237, 232, 227, 95%);
+    padding: 0.5em;
+    min-height: 100%;
+}
+.gif-col{
+    background-color: rgb(237, 232, 227, 95%);
+    margin-bottom: 0.5em;
+}
+#gif-btns{
+    margin-bottom:0;
+}
+.container .row  .cHeight{
+    min-height: 87vh;
+    margin-bottom: 1em;
+}
+.figure-image{
+    max-width: 100%;
 }

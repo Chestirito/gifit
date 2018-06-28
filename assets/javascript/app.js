@@ -1,17 +1,20 @@
 $(function() {
     var appObj = {
         items : [ 
-            "dog",
-            "cat",
-            "kangaroo",
-            "chameleon"    
+            "paper",
+            "no",
+            "meme",
+            "terraria"    
         ],
-        apikey : "Mxu234hiPj6ctTRTYeJI0UsrmfeGuXnS"
+        apikey : "Mxu234hiPj6ctTRTYeJI0UsrmfeGuXnS",
+        more: false,
+        limit: 10,
+        currentGif : ""
     }
     function makeButtons(){
         $("#gif-btns").text("");
         $.each( appObj.items, function( key, value ) {
-            $("#gif-btns").append("<button class='btn gBtn' data-gif='"+ value + "'>" + value + "</button>");
+            $("#gif-btns").append("<button class='btn gBtn btn-primary' data-gif='"+ value + "'>" + value + "</button>");
         });
     }
     makeButtons();
@@ -29,9 +32,16 @@ $(function() {
 
     $("#gif-btns").on("click", ".gBtn", function() {
       var gif = $(this).attr("data-gif");
-      
+      if(appObj.currentGif === gif){
+        appObj.limit += 10;
+      }
+      else{
+        appObj.currentGif = gif;
+        appObj.limit = 10;
+      }
+      console.log(appObj.limit);
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        gif + "&api_key=" + appObj.apikey + "&limit=10";
+        gif + "&api_key=" + appObj.apikey + "&limit=" + appObj.limit;
 
       $.ajax({
         url: queryURL,
@@ -39,7 +49,6 @@ $(function() {
       })
         .then(function(response) {
           var results = response.data;
-          console.log(response);
           $("#gifs-view").html("");
           for (var i = 0; i < results.length; i++) {
             var figure = $("<figure class='item'>");
